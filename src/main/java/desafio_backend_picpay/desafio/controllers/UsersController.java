@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController("/users")
 @RequiredArgsConstructor
-public class UsersController {
+public class UsersController { //falta adicionar as responses para documentação da API
     private final UserService uService;
 
     @PostMapping
