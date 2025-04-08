@@ -14,11 +14,4 @@ public class DataResponse {
     @JsonProperty("authorization")
     private Boolean authorization;
 
-    public Boolean getAuthorization() {
-        return authorization;
-    }
-
-    public void setAuthorization(Boolean authorization) {
-        this.authorization = authorization;
-    }
 }
