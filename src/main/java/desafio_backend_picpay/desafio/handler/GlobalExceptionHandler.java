@@ -65,7 +65,7 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
     @ExceptionHandler({
             EmailAlreadyExistsException.class,
             CpfOrCnpjAlreadyExistsException.class,
-            ShopkeeperException.class,
+            LojistaException.class,
             InsuficientBalanceException.class,
             InvalidTransactionException.class,
             NotAuthorizedTransactionException.class
