@@ -23,7 +23,7 @@ public class UserService {
                 .type(request.getType())
                 .email(request.getEmail())
                 .password(passwordEncoder.encode(request.getPassword()))
-                .CpfOrCnpj(request.getCpfOrCnpj())
+                .cpf(request.getCpf())
                 .balance(request.getBalance()).build());
     }
 
@@ -36,8 +36,8 @@ public class UserService {
         uRepository.save(user);
     }
     public void validateEmailAndCPF(CreateUserDTO request) throws CpfOrCnpjAlreadyExistsException, EmailAlreadyExistsException {
-        Users user = uRepository.findByCpfOrCnpj(request.getCpfOrCnpj()).orElse(null);
-        if(user != null)throw new CpfOrCnpjAlreadyExistsException(request.getCpfOrCnpj());
+        Users user = uRepository.findByCpf(request.getCpf()).orElse(null);
+        if(user != null)throw new CpfOrCnpjAlreadyExistsException(request.getCpf());
 
         user = uRepository.findByEmail(request.getEmail()).orElse(null);
         if(user != null) throw new EmailAlreadyExistsException(request.getEmail());
