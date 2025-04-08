@@ -3,6 +3,7 @@ package desafio_backend_picpay.desafio.database.entities;
 import desafio_backend_picpay.desafio.database.enuns.TypeUser;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -12,13 +13,14 @@ import java.math.BigDecimal;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
+@Builder
 @Table(name = "users")
 public class Users {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_user")
-    private long id;
+    private Long id;
 
     @Column(name = "name_user")
     private String name;
